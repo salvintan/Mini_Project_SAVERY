@@ -1,0 +1,67 @@
+:root {
+  --primary: #d07922cf;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Popppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  padding-top: 76px;
+  min-height: 2000px;
+}
+
+#search,
+#cart {
+  color: #fff;
+  font-size: 24px;
+  padding-left: 16px;
+}
+
+.navbar-brand span {
+  color: var(--primary);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("img/ayam_hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero ::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(1, 1, 3, 1) 3%, rgba(255, 255, 255, 0) 25%);
+}
+
+.hero .content {
+  padding: 23px 7%;
+  max-width: 840px;
+}
+
+.hero .content h2 {
+  font-size: 70px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content h2 span {
+  color: var(--primary);
+}
