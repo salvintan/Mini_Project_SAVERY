@@ -1,5 +1,5 @@
 :root {
-  --primary: #d07922cf;
+  --primary: #d07922;
   --bg: #010101;
 }
 
@@ -34,7 +34,8 @@ body {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 120px;
   background-image: url("img/ayam_hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -52,7 +53,7 @@ body {
 }
 
 .hero .content {
-  padding: 23px 7%;
+  padding: 17px 7%;
   max-width: 840px;
 }
 
