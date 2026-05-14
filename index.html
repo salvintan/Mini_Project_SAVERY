@@ -442,13 +442,17 @@
       const confirmOrder = document.getElementById("confirmOrder");
 
       let selectedMenu = "";
+      let selectedPrice = 0;
 
       orderButtons.forEach((button) => {
         button.addEventListener("click", function () {
           selectedMenu = this.closest(".card").querySelector(".card-title").innerText;
 
-          menuName.innerText = selectedMenu;
+          const priceText = this.closest(".card").querySelector(".fw-bold").innerText;
 
+          selectedPrice = parseInt(priceText.replace("Rp", "").replace(/\./g, "").trim());
+
+          menuName.innerText = selectedMenu;
           document.getElementById("quantity").value = 1;
 
           const modal = new bootstrap.Modal(document.getElementById("orderModal"));
@@ -472,6 +476,7 @@
           cart.push({
             name: selectedMenu,
             qty: qty,
+            price: selectedPrice,
           });
         }
 

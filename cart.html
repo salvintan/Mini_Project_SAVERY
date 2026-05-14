@@ -23,12 +23,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
-            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-          </ul>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <div class="navbar-extra">
             <a href="cart.html" id="cart"><i class="bi bi-cart"></i></a>
           </div>
@@ -42,13 +37,25 @@
       <div class="container">
         <h1 class="text-center mb-5"><span class="text-warning">Shopping</span> Cart</h1>
 
+        <div class="mb-4">
+          <a href="index.html #menu" class="btn btn-outline-warning">
+            <i class="bi bi-arrow-left"></i>
+            Kembali ke Menu
+          </a>
+        </div>
+
         <div id="cartContainer"></div>
 
         <!-- Total -->
         <div class="total-box mt-4">
-          <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex justify-content-between align-items-center mb-2">
             <h4>Total Item</h4>
             <h4 id="totalItem" class="text-warning">0</h4>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h4>Total Harga</h4>
+            <h4 id="totalPrice" class="text-warning">Rp0</h4>
           </div>
 
           <button class="btn btn-warning w-100 mt-4 fw-bold">Checkout</button>
@@ -59,6 +66,7 @@
     <script>
       const cartContainer = document.getElementById("cartContainer");
       const totalItem = document.getElementById("totalItem");
+      const totalPrice = document.getElementById("totalPrice");
 
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -67,43 +75,55 @@
 
         if (cart.length === 0) {
           cartContainer.innerHTML = `
-            <div class="empty-cart">
-              <i class="bi bi-cart-x fs-1 text-warning"></i>
-              <h3 class="mt-3">Keranjang masih kosong</h3>
-            </div>
-          `;
+    <div class="empty-cart">
+      <i class="bi bi-cart-x fs-1 text-warning"></i>
+      <h3 class="mt-3">Keranjang masih kosong</h3>
+    </div>
+  `;
 
           totalItem.innerText = 0;
+          totalPrice.innerText = "Rp0";
+
           return;
         }
 
         let total = 0;
+        let totalHarga = 0;
 
         cart.forEach((item, index) => {
           total += item.qty;
 
+          totalHarga += item.price * item.qty;
+
           cartContainer.innerHTML += `
-            <div class="cart-card">
-              <div class="d-flex justify-content-between align-items-center">
+    <div class="cart-card">
+    <div class="d-flex justify-content-between align-items-center">
 
-                <div>
-                  <h4>${item.name}</h4>
-                  <p class="mb-0">
-                    Quantity :
-                    <span class="price">${item.qty}</span>
-                  </p>
-                </div>
+      <div>
+        <h4>${item.name}</h4>
 
-                <button class="btn-delete" onclick="deleteItem(${index})">
-                  <i class="bi bi-trash"></i>
-                </button>
+        <p class="mb-1">
+          Quantity :
+          <span class="price">${item.qty}</span>
+        </p>
 
-              </div>
-            </div>
-          `;
+        <p class="mb-0 text-warning fw-bold">
+          Rp${(item.price * item.qty).toLocaleString("id-ID")}
+        </p>
+      </div>
+
+      <button class="btn-delete" onclick="deleteItem(${index})">
+        <i class="bi bi-trash"></i>
+      </button>
+
+    </div>
+  </div>
+`;
         });
 
         totalItem.innerText = total;
+
+        totalPrice.innerText = "Rp" + totalHarga.toLocaleString("id-ID");
       }
 
       function deleteItem(index) {
