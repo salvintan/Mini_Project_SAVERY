@@ -1,5 +1,5 @@
 :root {
-  --primary: #b8860b;
+  --primary: #facc15;
   --bg: #010101;
 }
 
@@ -60,14 +60,14 @@ body {
   border-radius: 10px;
   transition: 0.3s;
   background: rgba(0, 0, 0, 0.5);
-  color: #facc15;
-  border: 2px solid #facc15;
+  color: var(--primary);
+  border: 2px solid var(--primary);
   backdrop-filter: blur(3px);
 }
 
 .hero .btn:hover {
-  background: #facc15;
-  color: black;
+  background: var(--primary);
+  color: var(--bg);
 }
 
 .hero .content {
@@ -199,7 +199,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #facc15;
+  color: var(--primary);
   transform: translateX(5px);
 }
 
@@ -227,6 +227,8 @@ body {
     padding: 18px;
   }
 }
+
+/* cart.html */
 
 .cart-section {
   padding-top: 120px;
