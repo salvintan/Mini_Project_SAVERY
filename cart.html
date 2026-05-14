@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - SAVERY</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <img src="img/logo_SAVERY.png" width="60px" class="me-3" />
+        <a class="navbar-brand fw-bold" href="#">SAV<span>ERY</span> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+          </ul>
+          <div class="navbar-extra">
+            <a href="cart.html" id="cart"><i class="bi bi-cart"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+      <div class="container">
+        <h1 class="text-center mb-5"><span class="text-warning">Shopping</span> Cart</h1>
+
+        <div id="cartContainer"></div>
+
+        <!-- Total -->
+        <div class="total-box mt-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4>Total Item</h4>
+            <h4 id="totalItem" class="text-warning">0</h4>
+          </div>
+
+          <button class="btn btn-warning w-100 mt-4 fw-bold">Checkout</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const cartContainer = document.getElementById("cartContainer");
+      const totalItem = document.getElementById("totalItem");
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function renderCart() {
+        cartContainer.innerHTML = "";
+
+        if (cart.length === 0) {
+          cartContainer.innerHTML = `
+            <div class="empty-cart">
+              <i class="bi bi-cart-x fs-1 text-warning"></i>
+              <h3 class="mt-3">Keranjang masih kosong</h3>
+            </div>
+          `;
+
+          totalItem.innerText = 0;
+          return;
+        }
+
+        let total = 0;
+
+        cart.forEach((item, index) => {
+          total += item.qty;
+
+          cartContainer.innerHTML += `
+            <div class="cart-card">
+              <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+                  <h4>${item.name}</h4>
+                  <p class="mb-0">
+                    Quantity :
+                    <span class="price">${item.qty}</span>
+                  </p>
+                </div>
+
+                <button class="btn-delete" onclick="deleteItem(${index})">
+                  <i class="bi bi-trash"></i>
+                </button>
+
+              </div>
+            </div>
+          `;
+        });
+
+        totalItem.innerText = total;
+      }
+
+      function deleteItem(index) {
+        cart.splice(index, 1);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderCart();
+      }
+
+      renderCart();
+    </script>
+  </body>
+</html>
