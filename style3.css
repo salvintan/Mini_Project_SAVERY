@@ -19,6 +19,10 @@ body {
   padding-top: 76px;
 }
 
+.navbar-brand span {
+  color: var(--primary);
+}
+
 .payment-section {
   padding-top: 120px;
   padding-bottom: 80px;

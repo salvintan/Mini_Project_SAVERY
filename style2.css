@@ -1,23 +1,33 @@
 :root {
-    --primary: #facc15;
-    --bg: #010101;
-  }
+  --primary: #facc15;
+  --bg: #010101;
+}
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    background-color: var(--bg);
-    color: #fff;
-    padding-top: 76px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  padding-top: 76px;
+}
+
+.navbar-brand span {
+  color: var(--primary);
+}
+
+#cart {
+  color: #fff;
+  font-size: 24px;
+  padding-left: 16px;
+}
 
 .cart-section {
   padding-top: 120px;
