@@ -63,6 +63,11 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
 }
 
+.form-control::placeholder,
+textarea::placeholder {
+  color: white;
+}
+
 .payment-info {
   background: #2b2b2b;
   border-radius: 15px;

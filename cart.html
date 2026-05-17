@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -150,12 +150,27 @@
 
                 </div>
 
-                <button
-                  class="btn-delete"
-                  onclick="deleteItem(${index})"
-                >
-                  <i class="bi bi-trash"></i>
-                </button>
+                <div class="qty-wrapper">
+
+  <button
+    class="qty-btn"
+    onclick="decreaseQty(${index})"
+  >
+    <i class="bi bi-dash-lg"></i>
+  </button>
+
+  <span class="qty-number">
+    ${item.qty}
+  </span>
+
+  <button
+    class="qty-btn"
+    onclick="increaseQty(${index})"
+  >
+    <i class="bi bi-plus-lg"></i>
+  </button>
+
+</div>
 
               </div>
 
@@ -168,8 +183,20 @@
         totalPrice.innerText = "Rp" + totalHarga.toLocaleString("id-ID");
       }
 
-      function deleteItem(index) {
-        cart.splice(index, 1);
+      function increaseQty(index) {
+        cart[index].qty++;
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderCart();
+      }
+
+      function decreaseQty(index) {
+        cart[index].qty--;
+
+        if (cart[index].qty <= 0) {
+          cart.splice(index, 1);
+        }
 
         localStorage.setItem("cart", JSON.stringify(cart));
 

@@ -23,6 +23,12 @@ body {
   color: var(--primary);
 }
 
+#cart {
+  color: #fff;
+  font-size: 24px;
+  padding-left: 16px;
+}
+
 .hero {
   min-height: 100vh;
   display: flex;
