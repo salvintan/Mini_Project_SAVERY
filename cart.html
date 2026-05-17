@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart - SAVERY</title>
-
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -72,13 +71,9 @@
         <p>Apakah Anda yakin ingin checkout pesanan ini?</p>
 
         <div class="popup-btn">
-          <button class="btn-cancel" id="cancelCheckout">
-            Batal
-          </button>
+          <button class="btn-cancel" id="cancelCheckout">Batal</button>
 
-          <button class="btn-confirm" id="confirmCheckout">
-            Ya, Checkout
-          </button>
+          <button class="btn-confirm" id="confirmCheckout">Ya, Checkout</button>
         </div>
       </div>
     </div>
@@ -93,14 +88,11 @@
       const checkoutBtn = document.getElementById("checkoutBtn");
 
       // POPUP
-      const checkoutPopup =
-        document.getElementById("checkout-popup");
+      const checkoutPopup = document.getElementById("checkout-popup");
 
-      const cancelCheckout =
-        document.getElementById("cancelCheckout");
+      const cancelCheckout = document.getElementById("cancelCheckout");
 
-      const confirmCheckout =
-        document.getElementById("confirmCheckout");
+      const confirmCheckout = document.getElementById("confirmCheckout");
 
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -153,9 +145,7 @@
                   </p>
 
                   <p class="mb-0 text-warning fw-bold">
-                    Rp${(
-                      item.price * item.qty
-                    ).toLocaleString("id-ID")}
+                    Rp${(item.price * item.qty).toLocaleString("id-ID")}
                   </p>
 
                 </div>
@@ -175,17 +165,13 @@
 
         totalItem.innerText = total;
 
-        totalPrice.innerText =
-          "Rp" + totalHarga.toLocaleString("id-ID");
+        totalPrice.innerText = "Rp" + totalHarga.toLocaleString("id-ID");
       }
 
       function deleteItem(index) {
         cart.splice(index, 1);
 
-        localStorage.setItem(
-          "cart",
-          JSON.stringify(cart)
-        );
+        localStorage.setItem("cart", JSON.stringify(cart));
 
         renderCart();
       }
@@ -195,7 +181,6 @@
       // =========================
 
       checkoutBtn.addEventListener("click", function () {
-
         // Jika cart kosong
         if (cart.length === 0) {
           alert("Keranjang masih kosong!");
@@ -211,7 +196,6 @@
       // =========================
 
       cancelCheckout.addEventListener("click", function () {
-
         checkoutPopup.classList.remove("active");
       });
 
@@ -220,7 +204,6 @@
       // =========================
 
       confirmCheckout.addEventListener("click", function () {
-
         window.location.href = "payment.html";
       });
 
