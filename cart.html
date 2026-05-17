@@ -58,7 +58,7 @@
             <h4 id="totalPrice" class="text-warning">Rp0</h4>
           </div>
 
-          <button class="btn btn-warning w-100 mt-4 fw-bold">Checkout</button>
+          <button class="btn btn-warning w-100 mt-4 fw-bold" id="checkoutBtn">Checkout</button>
         </div>
       </div>
     </section>
@@ -132,6 +132,25 @@
         localStorage.setItem("cart", JSON.stringify(cart));
 
         renderCart();
+
+        // Checkout Button
+        const checkoutBtn = document.getElementById("checkoutBtn");
+
+        checkoutBtn.addEventListener("click", function () {
+          // Jika cart kosong
+          if (cart.length === 0) {
+            alert("Keranjang masih kosong!");
+            return;
+          }
+
+          // Konfirmasi checkout
+          const confirmCheckout = confirm("Apakah Anda yakin ingin checkout?");
+
+          // Jika pilih OK
+          if (confirmCheckout) {
+            window.location.href = "payment.html";
+          }
+        });
       }
 
       renderCart();
