@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu SAVERY</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styleMenu.css" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <img src="img/logo_SAVERY.png" width="60px" class="me-3" />
+        <a class="navbar-brand fw-bold" href="#">SAV<span>ERY</span> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html#about">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontak</a></li>
+          </ul>
+          <div class="navbar-extra">
+            <a href="cart.html" id="cart"><i class="bi bi-cart"></i></a>
+            <a href="index.html" id="home"><i class="bi bi-house-door-fill"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- MENU PAGE -->
+    <section class="menu-page py-5">
+      <div class="container">
+        <!-- TITLE -->
+        <div class="text-center mb-5">
+          <h1 class="fw-bold text-warning">MENU <span class="text-white">SAVERY</span></h1>
+        </div>
+
+        <!-- PAKET -->
+        <div class="menu-category mb-5">
+          <h2 class="category-title">PAKET</h2>
+
+          <div class="row g-4">
+            <!-- Paket Hemat -->
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow position-relative">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6"> BEST SELLER </span>
+
+                <img src="img/paket_hemat.jpg" class="card-img-top" alt="Paket Hemat" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Paket Hemat</h3>
+
+                  <p class="card-text">1 Ayam Crispy + Nasi + Es Teh</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp25.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paket Special -->
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/paket_spesial.jpg" class="card-img-top" alt="Paket Special" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Paket Special</h3>
+
+                  <p class="card-text">2 Ayam Crispy + Kentang + Es Teh</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp45.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paket Jumbo -->
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/paket_jumbo.jpg" class="card-img-top" alt="Paket Jumbo" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Paket Jumbo</h3>
+
+                  <p class="card-text">7 Ayam Crispy + 5 Nasi + 5 Es Teh</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp105.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ALACARTE -->
+        <div class="menu-category mb-5">
+          <h2 class="category-title">ALACARTE</h2>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/ayam_single.jpg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Ayam Single</h3>
+
+                  <p class="card-text">1 Ayam Crispy Original</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp15.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/ayam_duo.jpg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Ayam Duo</h3>
+
+                  <p class="card-text">2 Ayam Crispy</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp29.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/nasi.jpg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Rice</h3>
+
+                  <p class="card-text">Nasi Putih Hangat</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp7.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MINUMAN -->
+        <div class="menu-category mb-5">
+          <h2 class="category-title">MINUMAN</h2>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/ice_tea.jpg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Ice Tea</h3>
+
+                  <p class="card-text">Es Teh Manis Segar</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp8.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/softdrink.jpg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Softdrink</h3>
+
+                  <p class="card-text">Cola / Fanta / Sprite</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp10.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/hot_coffee.jpg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Hot Coffee</h3>
+
+                  <p class="card-text">Kopi Panas Premium</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp13.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SAUCE -->
+        <div class="menu-category mb-5">
+          <h2 class="category-title">SAUCE</h2>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/keju.jpeg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Cheese</h3>
+
+                  <p class="card-text">Saus Keju</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp8.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/mayo.jpeg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Mayonaise</h3>
+
+                  <p class="card-text">Mayonaise</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp8.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card bg-dark text-white border-0 shadow">
+                <img src="img/saus.jpeg" class="card-img-top" />
+
+                <div class="card-body text-center d-flex flex-column">
+                  <h3 class="card-title">Hot Sauce</h3>
+
+                  <p class="card-text">Saus Pedas</p>
+
+                  <div class="fw-bold text-warning fs-5 mb-3">Rp8.000</div>
+
+                  <button class="btn btn-warning mt-auto order-btn">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Modal Start -->
+    <div class="modal fade" id="orderModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-0 rounded-4">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title">Pesanan</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body text-center">
+            <h4 id="menuName" class="mb-4 text-warning"></h4>
+
+            <label class="mb-2">Quantity</label>
+
+            <input type="number" id="quantity" class="form-control text-center bg-secondary text-white border-0" value="1" min="1" />
+          </div>
+
+          <div class="modal-footer border-secondary">
+            <button type="button" class="btn btn-warning w-100 fw-bold" id="confirmOrder">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Order Modal End -->
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const orderButtons = document.querySelectorAll(".order-btn");
+      const menuName = document.getElementById("menuName");
+      const confirmOrder = document.getElementById("confirmOrder");
+
+      let selectedMenu = "";
+      let selectedPrice = 0;
+
+      orderButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          selectedMenu = this.closest(".card").querySelector(".card-title").innerText;
+
+          const priceText = this.closest(".card").querySelector(".fw-bold").innerText;
+
+          selectedPrice = parseInt(priceText.replace("Rp", "").replace(/\./g, "").trim());
+
+          menuName.innerText = selectedMenu;
+          document.getElementById("quantity").value = 1;
+
+          const modal = new bootstrap.Modal(document.getElementById("orderModal"));
+
+          modal.show();
+        });
+      });
+
+      confirmOrder.addEventListener("click", function () {
+        const qty = parseInt(document.getElementById("quantity").value);
+
+        // Ambil data cart lama
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Cek apakah menu sudah ada
+        const existingItem = cart.find((item) => item.name === selectedMenu);
+
+        if (existingItem) {
+          existingItem.qty += qty;
+        } else {
+          cart.push({
+            name: selectedMenu,
+            qty: qty,
+            price: selectedPrice,
+          });
+        }
+
+        // Simpan kembali
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Tutup modal
+        bootstrap.Modal.getInstance(document.getElementById("orderModal")).hide();
+      });
+    </script>
+  </body>
+</html>
