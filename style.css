@@ -23,16 +23,11 @@ body {
   color: var(--primary);
 }
 
-#cart {
+#cart, #home {
   color: #fff;
   font-size: 24px;
-  padding-left: 16px;
-}
-
-#home{
-  color: #fff;
-  font-size: 24px;
-  padding-left: 16px;
+  margin-left: 16px;
+  transition: 0.3s;
 }
 
 .hero {
@@ -207,29 +202,4 @@ body {
 .footer-link:hover {
   color: var(--primary);
   transform: translateX(5px);
-}
-
-@media (max-width: 992px) {
-  .carousel-control-prev {
-    left: -40px;
-  }
-
-  .carousel-control-next {
-    right: -40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-control-prev {
-    left: 0;
-  }
-
-  .carousel-control-next {
-    right: 0;
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    padding: 18px;
-  }
 }
