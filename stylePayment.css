@@ -19,6 +19,18 @@ body {
   padding-top: 76px;
 }
 
+#cart {
+  color: #fff;
+  font-size: 24px;
+  padding-left: 16px;
+}
+
+#home{
+  color: #fff;
+  font-size: 24px;
+  padding-left: 16px;
+}
+
 .navbar-brand span {
   color: var(--primary);
 }
