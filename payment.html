@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <img src="img/logo_SAVERY.png" width="60px" class="me-3" />
-        <a class="navbar-brand fw-bold" href="#">SAV<span>ERY</span> </a>
+        <a class="navbar-brand fw-bold me-auto" href="index.html">SAV<span>ERY</span> </a>
         <div class="navbar-extra">
           <a href="cart.html" id="cart"><i class="bi bi-cart"></i></a>
           <a href="index.html" id="home"><i class="bi bi-house-door-fill"></i></a>
@@ -194,7 +194,24 @@
 
         <p class="text-light mt-3">Terima kasih telah memesan di SAVERY</p>
 
-        <button class="btn btn-warning mt-3 fw-bold" onclick="backToHome()">Kembali ke Home</button>
+        <!-- E-STRUK -->
+        <div class="receipt-box mt-4" id="receiptBox">
+          <h5 class="text-warning mb-3">E-STRUK PEMBAYARAN</h5>
+
+          <div id="receiptItems"></div>
+
+          <hr />
+
+          <div class="d-flex justify-content-between">
+            <strong>Total</strong>
+            <strong id="receiptTotal"></strong>
+          </div>
+        </div>
+
+        <!-- BUTTON -->
+        <button class="btn btn-warning mt-4 fw-bold w-100" id="downloadReceipt">Download E-Struk</button>
+
+        <button class="btn btn-outline-light mt-3 w-100" onclick="backToHome()">Kembali ke Home</button>
       </div>
     </div>
 
@@ -224,9 +241,44 @@
       paymentForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        const receiptItems = document.getElementById("receiptItems");
+
+        const receiptTotal = document.getElementById("receiptTotal");
+
+        receiptItems.innerHTML = "";
+
+        let total = 0;
+
+        cart.forEach((item) => {
+          const subtotal = item.price * item.qty;
+
+          total += subtotal;
+
+          receiptItems.innerHTML += `
+      <div class="receipt-item">
+
+        <div>
+          <strong>${item.name}</strong>
+          <br>
+          <small>
+            Rp${item.price.toLocaleString("id-ID")}
+            x ${item.qty}
+          </small>
+        </div>
+
+        <div>
+          Rp${subtotal.toLocaleString("id-ID")}
+        </div>
+
+      </div>
+    `;
+        });
+
+        receiptTotal.innerText = "Rp" + total.toLocaleString("id-ID");
+
         successPopup.classList.add("active");
 
-        // Hapus cart setelah checkout
+        // Hapus cart
         localStorage.removeItem("cart");
       });
 
@@ -237,6 +289,55 @@
       function backToHome() {
         window.location.href = "index.html";
       }
+
+      // =========================
+      // DOWNLOAD RECEIPT
+      // =========================
+
+      document.getElementById("downloadReceipt").addEventListener("click", function () {
+        let receiptText = `
+========================
+      SAVERY
+   E-STRUK PEMBAYARAN
+========================
+
+`;
+
+        let total = 0;
+
+        cart.forEach((item) => {
+          const subtotal = item.price * item.qty;
+
+          total += subtotal;
+
+          receiptText += `
+${item.name}
+Rp${item.price.toLocaleString("id-ID")} x ${item.qty}
+= Rp${subtotal.toLocaleString("id-ID")}
+
+`;
+        });
+
+        receiptText += `
+========================
+TOTAL:
+Rp${total.toLocaleString("id-ID")}
+========================
+
+Terima kasih telah
+memesan di SAVERY
+`;
+
+        const blob = new Blob([receiptText], { type: "text/plain" });
+
+        const link = document.createElement("a");
+
+        link.href = URL.createObjectURL(blob);
+
+        link.download = "E-Struk-SAVERY.txt";
+
+        link.click();
+      });
     </script>
   </body>
 </html>

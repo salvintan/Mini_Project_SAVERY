@@ -23,8 +23,7 @@ body {
   color: var(--primary);
 }
 
-#cart,
-#home {
+#cart, #home {
   color: #fff;
   font-size: 24px;
   margin-left: 16px;
