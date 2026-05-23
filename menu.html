@@ -307,6 +307,7 @@
 
       let selectedMenu = "";
       let selectedPrice = 0;
+      let selectedImage = "";
 
       orderButtons.forEach((button) => {
         button.addEventListener("click", function () {
@@ -315,6 +316,7 @@
           const priceText = this.closest(".card").querySelector(".fw-bold").innerText;
 
           selectedPrice = parseInt(priceText.replace("Rp", "").replace(/\./g, "").trim());
+          selectedImage = this.closest(".card").querySelector("img").getAttribute("src");
 
           menuName.innerText = selectedMenu;
 
@@ -363,6 +365,7 @@
             name: selectedMenu,
             qty: qty,
             price: selectedPrice,
+            image: selectedImage,
           });
         }
 
